@@ -82,10 +82,10 @@ def load_vocab() -> list[Word]:
             result.append(Word(word=w.word, meaning=json_map.get(key, "")))
     # 补充
     for w, m in json_map.items():
-        if w not in seen and len(result) < 1500:
+        if w not in seen and len(result) < 750:
             seen.add(w)
             result.append(Word(word=w, meaning=m))
-    result = result[:1500]
+    result = result[:750]
     print(f"  合并: {len(result)}")
     return result
 
